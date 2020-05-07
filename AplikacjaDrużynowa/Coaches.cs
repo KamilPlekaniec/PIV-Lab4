@@ -1,20 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace AplikacjaDrużynowa
 {
     public class Coaches
     {
-        private Coaches wynik2;
+        [JsonIgnore]
+        public int Id { get; set; }
+        [JsonPropertyName("last_name")]
+        public string LastName { get; set; }
+        public List<Seasons> Seasonss { get; set; }
 
-        public Coaches(Coaches wynik2)
+        public class Seasons
         {
-            this.wynik2 = wynik2;
+            [JsonIgnore]
+            public int Id { get; set; }
+            public string School { get; set; }
+
         }
 
-        public string first_name { get; set; }
-        public string last_name { get; set; }
 
     }
 }

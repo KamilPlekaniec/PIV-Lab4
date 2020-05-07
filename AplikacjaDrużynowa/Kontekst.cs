@@ -7,7 +7,6 @@ namespace AplikacjaDrużynowa
 {
     public class Kontekst : DbContext
     {
-        public DbSet<Coaches> Coachess { get; set; }
         public DbSet<Teams> Teamss { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

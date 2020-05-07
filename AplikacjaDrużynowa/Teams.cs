@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AplikacjaDrużynowa
 {
     public class Teams
     {
-        private Teams wynik1;
+        [JsonIgnore]
+        public int Id { get; set; }
+        public string School { get; set; }
+        public string Conference { get; set; }
+        public string Abbreviation { get; set; }
 
-        public Teams(Teams wynik1)
-        {
-            this.wynik1 = wynik1;
-        }
-
-        public int id { get; set; }
-        public string school { get; set; }
-        public string mascot { get; set; }
+        [JsonIgnore]
+        public List<Coaches> Coachess { get; set; } = new List<Coaches>();
 
     }
 }
